@@ -50,15 +50,15 @@ public class java_flow_control {
             userInput.close();
 
             // Number 1
-
+            int numOne = randomNumber - carYear;
             // Number 2
-
+            int numTwo;
             // Number 3
-
+            int numThree;
             // Number 4
-
+            int numFour;
             // Number 5
-
+            int numFive;
             // Magic Number
             int magicNumber = jerseyNumber * randomNumber;
             if (magicNumber > 75) {
@@ -66,8 +66,8 @@ public class java_flow_control {
                 magicNumber = random.nextInt(75);
             }
             // output
-            System.out.print("Lottery numbers: " + petAge + " " + luckyNumber + " " + carYear + " " + actorName + " "
-                    + randomNumber + " Magic ball: " + magicNumber);
+            System.out.print("Lottery numbers: " + numOne + " " + numTwo + " " + numThree + " " + numFour + " "
+                    + numFive + " Magic ball: " + magicNumber);
         } else {
             System.out.print("OK. You can choose your own numbers.");
         }
