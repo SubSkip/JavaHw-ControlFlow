@@ -6,28 +6,21 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class java_flow_control {
-
-    public static class AsciiChars {
-        public static void printNumbers() {
-            AsciiChars.printNumbers();
-        }
-
-        public static void printLowerCase() {
-            AsciiChars.printLowerCase();
-        }
-
-        public static void printUpperCase() {
-            AsciiChars.printUpperCase();
-        }
-    }
-
+    /*
+     * I have no idea what the first part was asking for public static class
+     * AsciiChars { public static void printNumbers() { AsciiChars.printNumbers(); }
+     * 
+     * public static void printLowerCase() { AsciiChars.printLowerCase(); }
+     * 
+     * public static void printUpperCase() { AsciiChars.printUpperCase(); } }
+     */
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);
-
+        // Ask user if they wanna play
         System.out.print("Do you want to me choose your lotto numbers? (y or n) ");
         String generate = userInput.next();
-
+        // Grab some data from the user if they enter y
         if (generate.equals("y")) {
             System.out.print("Enter your first name: ");
             String userName = userInput.next();
@@ -49,17 +42,20 @@ public class java_flow_control {
             int randomNumber = userInput.nextInt();
             userInput.close();
 
-            // Number 1
-            int numOne = randomNumber - carYear;
-            // Number 2
-            int numTwo;
-            // Number 3
-            int numThree;
-            // Number 4
-            int numFour;
-            // Number 5
-            int numFive;
-            // Magic Number
+            // Number 1 - petAge minus carYear
+            int numOne = Math.abs(petAge - carYear); // Need to account for neg numbers with Math.abs()
+            // Number 2 - First character of actorName converted to an ASCII int equivalent
+            char firstChar = actorName.charAt(0);
+            int numTwo = (int) firstChar;
+            // Number 3 - Last character of actorName converted to an ASCII int equivalent
+            char lastChar = actorName.charAt(actorName.length() - 1);
+            int numThree = (int) lastChar;
+            // Number 4 - Third character of petName converted to an ASCII int equivalent
+            char thirdPetChar = petName.charAt(2);
+            int numFour = (int) thirdPetChar;
+            // Number 5 - Always 42
+            int numFive = 42;
+            // Magic Number - Jersey number times random number or random int less than 75
             int magicNumber = jerseyNumber * randomNumber;
             if (magicNumber > 75) {
                 Random random = new Random();
@@ -69,7 +65,7 @@ public class java_flow_control {
             System.out.print("Lottery numbers: " + numOne + " " + numTwo + " " + numThree + " " + numFour + " "
                     + numFive + " Magic ball: " + magicNumber);
         } else {
-            System.out.print("OK. You can choose your own numbers.");
+            System.out.print("OK. You can choose your own numbers. Good luck!");
         }
     }
 }
