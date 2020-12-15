@@ -6,15 +6,33 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class java_flow_control {
-    /*
-     * I have no idea what the first part was asking for public static class
-     * AsciiChars { public static void printNumbers() { AsciiChars.printNumbers(); }
-     * 
-     * public static void printLowerCase() { AsciiChars.printLowerCase(); }
-     * 
-     * public static void printUpperCase() { AsciiChars.printUpperCase(); } }
-     */
+
+    public static class AsciiChars {
+        public static void printNumbers() {
+            for (int i = 1; i <= 9; ++i)
+                System.out.print(i);
+        }
+
+        public static void printLowerCase() {
+            for (char i = 'a'; i <= 'z'; ++i)
+                System.out.print(i);
+        }
+
+        public static void printUpperCase() {
+            for (char i = 'A'; i <= 'Z'; ++i)
+                System.out.print(i);
+        }
+    }
+
     public static void main(String[] args) {
+
+        System.out.println("These are the valid characters:");
+        AsciiChars.printNumbers();
+        System.out.println();
+        AsciiChars.printLowerCase();
+        System.out.println();
+        AsciiChars.printUpperCase();
+        System.out.println();
 
         Scanner userInput = new Scanner(System.in);
         // Ask user if they wanna play
